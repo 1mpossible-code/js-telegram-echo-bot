@@ -20,7 +20,7 @@ bot.on('text', ctx => {
 })
 
 // Launch bot
-await bot.launch();
+bot.launch().then(() => console.log('Bot is ONLINE'));
 
 // Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'))
