@@ -7,11 +7,9 @@ dotenv.config();
 // Create bot instance
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-// Echo handler
-bot.on('text', ctx => {
-    // Reply message text
-    ctx.reply(ctx.message.text);
-})
+// Text handler. Send reply message
+// with the same text each time
+bot.on('text', ctx => ctx.reply(ctx.message.text))
 
 // Launch bot
 bot.launch().then(() => console.log('Bot is ONLINE'));
