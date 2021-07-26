@@ -7,12 +7,6 @@ dotenv.config();
 // Create bot instance
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-// Bot 'start' command handler
-bot.command('start', (ctx) => {
-    // Send message
-    ctx.reply('Hello!');
-})
-
 // Echo handler
 bot.on('text', ctx => {
     // Reply message text
